@@ -1,0 +1,92 @@
+# get all rows
+GET http://localhost:5000/api/books
+
+
+###
+# get single row 
+GET http://localhost:5000/api/books/3/
+
+###
+# Crete a new book entry
+POST http://localhost:5000/api/books/
+Content-Type: application/json
+
+{
+  "title": "Bestie(Queen)",
+  "authorId": 7,
+  "rating": 5.0,
+  "ratingCount": 126559,
+  "reviewCount": 611,
+  "description": "Kutty, the heartbeat I never knew I needed, the smile that makes my world brighter, and the reason my every day feels special.She is not just Kutty, she is my kind of magic.In the story of my life, Kutty is the most beautiful line ,written with love, sealed with care, and read with a smile every day.",
+  "pages": 352,
+  "dateOfPublication": "May 1st 2003",
+  "editionLanguage": "English",
+  "price": 850,
+  "onlineStores": "Bestie Forever......."
+}
+
+###
+# Update an existing book entry
+PUT http://localhost:5000/api/books/2/
+Content-Type: application/json
+
+{
+  "title": "Harry Potter",
+  "authorId": 2,
+  "rating": 5,
+  "ratingCount": 1000000,
+  "reviewCount": 711,
+  "description": "There is a door at the end of a silent corridor.",
+  "pages": 352,
+  "dateOfPublication": "2025-10-17",
+  "editionLanguage": "English",
+  "price": 850,
+  "onlineStores": "Amazon,Audible,Indigo,Apple Books,Google Play,IndieBound"
+}
+
+###
+# Delete a book entry
+DELETE http://localhost:5000/api/books/1/
+
+###
+GET http://localhost:5000/api/books/search?title=Harry 
+
+
+###
+DELETE http://localhost:5000/api/books/search?id=
+
+###
+PUT http://localhost:5000/api/bookss/2/
+Content-Type: application/json
+
+{
+  "title": "Harry Potter",
+  "authorId": 2,
+  "rating": 5,
+  "ratingCount": 1000000,
+  "reviewCount": 711,
+  "description": "There is a door at the end of a silent corridor.",
+  "pages": 352,
+  "dateOfPublication": "2025-10-17",
+  "editionLanguage": "English",
+  "price": 850,
+  "onlineStores": "Amazon,Audible,Indigo,Apple Books,Google Play,IndieBound"
+}
+
+###
+POST http://localhost:5000/api/bookss/
+Content-Type: application/json
+
+{
+  "title": "Bestie(Queen)",
+  "authorId": 7,
+  "rating": 5.0,
+  "ratingCount": 126559,
+  "reviewCount": 611,
+  "description": "Kutty, the heartbeat I never knew I needed, the smile that makes my world brighter, and the reason my every day feels special.She is not just Kutty, she is my kind of magic.In the story of my life, Kutty is the most beautiful line ,written with love, sealed with care, and read with a smile every day.",
+  "pages": 352,
+  "dateOfPublication": "May 1st 2003",
+  "editionLanguage": "English",
+  "price": 850,
+  "onlineStores": "Bestie Forever......."
+}
