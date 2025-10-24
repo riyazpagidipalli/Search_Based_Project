@@ -98,39 +98,35 @@ function searchWikipedia(event) {
 
     spinnerEl.classList.remove("d-none");
     searchResultsEl.textContent = "";
-    
+
+    //This code is for deployment  purpose.
+    // const API_BASE_URL = "https://search-based-project.onrender.com";
+    // let url = API_BASE_URL + "/api/books/search?title=" + searchInput;
 
     let searchInput = searchInputEl.value;
-    const API_BASE_URL = "https://search-based-project.onrender.com";
-    let url = API_BASE_URL + "/api/books/search?title=" + searchInput;
-
-    // let url = "http://localhost:5000/api/books/search?title=" + searchInput;
+    let url = "http://localhost:5000/api/books/search?title=" + searchInput;
     
     let options = {
       method: "GET"
     };
-
-
-
-  //   fetch(url, options)
-  // .then(response => response.json())
-  // .then(jsonData => {
-  //   console.log("API Response:", jsonData);
-
-  //   // jsonData is already an array
-  //   displayResults(jsonData);
-  // })
-  // .catch(error => {
-  //   console.error("Fetch error:", error);
-  // });
     fetch(url, options)
-        .then((response) => response.json())
-        .then((jsonData) => {
-          console.log(jsonData);
-        });
+  .then(response => response.json())
+  .then(jsonData => {
+    console.log("API Response:", jsonData);
+
+    // jsonData is already an array
+    displayResults(jsonData);
+  })
+  .catch(error => {
+    console.error("Fetch error:", error);
+  });
+    //This code for checking API response for  which  json, if jsonData is already an array then write above .
+    // fetch(url, options)
+    //     .then((response) => response.json())
+    //     .then((jsonData) => {
+    //       console.log(jsonData);
+    //     });
    
   }
 }
-
-
 searchInputEl.addEventListener("keydown", searchWikipedia);
