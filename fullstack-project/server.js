@@ -12,9 +12,6 @@ app.use(express.static(path.join(__dirname, "frontend")));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
-
-
-
 // 🔐 Oracle Database Connection Configuration
 const dbConfig = {
   user: "goodreads",        // your Oracle username
