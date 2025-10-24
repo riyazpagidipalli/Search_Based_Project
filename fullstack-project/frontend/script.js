@@ -112,22 +112,22 @@ function searchWikipedia(event) {
 
 
 
-    fetch(url, options)
-  .then(response => response.json())
-  .then(jsonData => {
-    console.log("API Response:", jsonData);
+  //   fetch(url, options)
+  // .then(response => response.json())
+  // .then(jsonData => {
+  //   console.log("API Response:", jsonData);
 
-    // jsonData is already an array
-    displayResults(jsonData);
-  })
-  .catch(error => {
-    console.error("Fetch error:", error);
-  });
-    // fetch(url, options)
-    //     .then((response) => response.json())
-    //     .then((jsonData) => {
-    //       console.log(jsonData);
-    //     });
+  //   // jsonData is already an array
+  //   displayResults(jsonData);
+  // })
+  // .catch(error => {
+  //   console.error("Fetch error:", error);
+  // });
+    fetch(url, options)
+        .then((response) => response.json())
+        .then((jsonData) => {
+          console.log(jsonData);
+        });
    
   }
 }
