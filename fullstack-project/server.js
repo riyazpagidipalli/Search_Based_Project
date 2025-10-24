@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require("path");
+// const path = require("path");  
 const oracledb = require('oracledb');
 const cors = require('cors');
 
@@ -7,23 +7,23 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "frontend")));
+// app.use(express.static(path.join(__dirname, "frontend")));
 
-// Root route
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
-});
+// // Root route
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontend", "index.html"));
+// });
 // 🔐 Oracle Database Connection Configuration
-// const dbConfig = {
-//   user: "goodreads",        // your Oracle username
-//   password: "Riyaz8688557396",   // your Oracle password
-//   connectString: "localhost/XEPDB1" // service name or TNS
-// };
 const dbConfig = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  connectString: process.env.DB_CONNECT
+  user: "",        // your Oracle username
+  password: "",   // your Oracle password
+  connectString: "" // service name or TNS
 };
+// const dbConfig = {
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   connectString: process.env.DB_CONNECT
+// };
 // 🟢 API route to search books by title
 app.get('/api/books/search', async (req, res) => {
   const title = req.query.title;   // e.g. /api/books/search?title=Harry Potter
