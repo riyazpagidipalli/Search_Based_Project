@@ -14,10 +14,15 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 // 🔐 Oracle Database Connection Configuration
+// const dbConfig = {
+//   user: "goodreads",        // your Oracle username
+//   password: "Riyaz8688557396",   // your Oracle password
+//   connectString: "localhost/XEPDB1" // service name or TNS
+// };
 const dbConfig = {
-  user: "goodreads",        // your Oracle username
-  password: "Riyaz8688557396",   // your Oracle password
-  connectString: "localhost/XEPDB1" // service name or TNS
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  connectString: process.env.DB_CONNECT
 };
 // 🟢 API route to search books by title
 app.get('/api/books/search', async (req, res) => {
