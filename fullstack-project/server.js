@@ -9,7 +9,7 @@ app.use(cors());
 // 🔐 Oracle Database Connection Configuration
 const dbConfig = {
   user: "goodreads",        // your Oracle username
-  password: "Riyaz143",   // your Oracle password
+  password: "Riyaz8688557396",   // your Oracle password
   connectString: "localhost/XEPDB1" // service name or TNS
 };
 // 🟢 API route to search books by title
