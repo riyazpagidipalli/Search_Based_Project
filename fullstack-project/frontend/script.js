@@ -101,7 +101,10 @@ function searchWikipedia(event) {
     
 
     let searchInput = searchInputEl.value;
-    let url = "http://localhost:5000/api/books/search?title=" + searchInput;
+    const API_BASE_URL = "https://search-based-project.onrender.com";
+    let url = API_BASE_URL + "/api/books/search?title=" + searchInput;
+
+    // let url = "http://localhost:5000/api/books/search?title=" + searchInput;
     
     let options = {
       method: "GET"
